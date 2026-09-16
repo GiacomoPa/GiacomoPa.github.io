@@ -345,7 +345,9 @@ strong { font-weight: 700; }
 
     <div class="figure">
         <img src="fig2_thickness.png" alt="Optimized skin and web thickness distributions">
-        <div class="caption">Figure 2: Optimized skin and web thickness distributions along the normalized blade radius r/R for Nw = 1, 2, 3 compared to the reference case.</div>
+        <div class="caption">Figure 2: Optimized skin and web thickness distributions along the normalized blade radius r/R for Nw = 1, 2, 3 compared to the reference case.  Largest deviations occur in
+        the tip and root regions,  due to the simplified modelling of
+        the blade ends.</div>
     </div>
 </section>
 
@@ -381,22 +383,25 @@ strong { font-weight: 700; }
 
     <div class="figure">
         <img src="fig3_mesh.png" alt="Structured computational mesh of the shrouded stator stage">
-        <div class="caption">Figure 3: Structured computational mesh of the shrouded stator stage (ANSYS ICEM CFD).</div>
+        <div class="caption">Figure 3: Structured computational mesh of the shrouded stator stage (ANSYS ICEM CFD).  The cavity is modelled through additional boundary conditions at the stator hub
+        region.</div>
     </div>
 
     <div class="figure">
         <img src="fig4_streamlines.png" alt="Streamlines comparison between ideal stator and cavity configuration">
-        <div class="caption">Figure 4: Streamlines at hub, casing and blade surface – comparison between configurations.</div>
+        <div class="caption">Figure 4: Streamlines at hub, casing and blade surface – comparison between configurations. In the cavity case, the characteristic hub vortex is clearly visible, expanding along
+        the blade span towards the trailing edge region.</div>
     </div>
 
     <div class="figure">
         <img src="fig5_loss.png" alt="Radial distribution of stator loss coefficient">
-        <div class="caption">Figure 5: Radial distribution of the stator loss coefficient ωstator over the normalized blade height at the design operating point (DOP).</div>
+        <div class="caption">Figure 5: Radial distribution of the stator loss coefficient ωstator over the normalized blade height at the design operating point (DOP). for the cavity and ideal stator configurations.</div>
     </div>
 
     <div class="figure">
         <img src="fig6_operatingline.png" alt="Stage operating line and polytropic efficiency">
-        <div class="caption">Figure 6: Comparison of global stage performance between ideal stator and cavity configuration.</div>
+        <div class="caption">Figure 6: Comparison of global stage performance between ideal stator and cavity configuration. The cavity reduces both pressure ratio and efficiency across the entire operating
+        line, with increasing influence towards surge.</div>
     </div>
 
     <h2>Methods and Tools</h2>
@@ -449,12 +454,15 @@ strong { font-weight: 700; }
 
     <div class="figure">
         <img src="fig8_mach.png" alt="Relative Mach number distribution for four tip clearances">
-        <div class="caption">Figure 8: Relative Mach number distribution on axial cross-sections of the rotor passage for four tip clearances.</div>
+        <div class="caption">Figure 8: Relative Mach number distribution on axial cross-sections of the rotor passage for four tip clearances. With increasing clearance, the Mach number at the blade tip
+        grows and expands along the blade span.</div>
     </div>
 
     <div class="figure">
         <img src="fig9_pressureloss.png" alt="Relative total pressure distribution">
-        <div class="caption">Figure 9: Circumferentially averaged relative total pressure distribution over the normalized blade height at the rotor trailing edge.</div>
+        <div class="caption">Figure 9: Circumferentially averaged relative total pressure distribution over the normalized blade height at the rotor trailing edge. for the four investigated tip
+        clearances. The curves demonstrate the increasing loss intensity and the widening of the
+        loss region with growing tip clearance.</div>
     </div>
 
     <h2>Methods and Tools</h2>
@@ -501,7 +509,9 @@ strong { font-weight: 700; }
 
     <div class="figure">
         <img src="fig10_velocity.png" alt="Velocity magnitude contour plots">
-        <div class="caption">Figure 10: Velocity magnitude contour plots for the irregular mountain profile at low and high Reynolds number.</div>
+        <div class="caption">Figure 10: Velocity magnitude contour plots for the irregular mountain profile at low and high Reynolds number. At low Re the flow remains fully attached to
+        the obstacle; at high Re boundary-layer separation and recirculation zones are clearly
+        visible in the lee of the peaks.</div>
     </div>
 
     <div class="figure">
@@ -511,7 +521,8 @@ strong { font-weight: 700; }
 
     <div class="figure">
         <img src="fig12_tke.png" alt="Maximum turbulent kinetic energy versus Reynolds number">
-        <div class="caption">Figure 12: Maximum Turbulent Kinetic Energy as a function of Reynolds number for the three obstacle geometries.</div>
+        <div class="caption">Figure 12: Maximum Turbulent Kinetic Energy as a function of Reynolds number for the three obstacle geometries. The TKE increases monotonically with Re for all cases; the
+        irregular multi-peak profile consistently yields the highest turbulent intensity.</div>
     </div>
 
     <h2>Methods and Tools</h2>
@@ -560,12 +571,21 @@ strong { font-weight: 700; }
 
     <div class="figure">
         <img src="fig13_ddt.png" alt="DDT in a closed-end pipe">
-        <div class="caption">Figure 13: DDT in a closed-end pipe: pre-compression waves progressively accumulate and eventually collapse into a shock wave.</div>
+        <div class="caption">Figure 13: DDT in a closed-end pipe:  The closed end imposes a zero-velocity boundary
+        condition at the wall, generating pre-compression waves that counteract the wall-normal
+        velocity induced by the propagating deflagration. These waves progressively accumulate
+        and eventually collapse into a shock wave - a mechanism that requires a minimum pipe
+        length for the pre-compression waves to catch up with one another. If the post-shock
+        conditions satisfy the ignition criteria, a detonation wave is initiated within the pipe.</div>
     </div>
 
     <div class="figure">
         <img src="fig14_species.png" alt="H2 and OH mole fractions versus time">
-        <div class="caption">Figure 14: Time evolution of the mole fractions of H2 and OH in the 0D reactor simulation.</div>
+        <div class="caption">Figure 14: Time evolution of the mole fractions of H2 and OH in the 0D reactor simulation (λ = 1, T1 = 1023 K).  The simultaneous rise of OH and drop of H2 marks the ignition
+        point, whose temporal coordinate, known as the Ignition Delay Time (IDT), is indicated
+        by the vertical dashed black line. The reaction time is defined as the time elapsed between
+        the IDT and the end of the reaction, when the H2 and OH mole fractions reach a steady
+        value, which is indicated by the vertical dashed gray line.</div>
     </div>
 
     <h2>Methods and Tools</h2>
