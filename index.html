@@ -1,10 +1,588 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giacomo Parodi | Portfolio</title>
+<meta name="description" content="Giacomo Parodi — M.Sc. Aerospace Engineering. Selected engineering projects in CFD, turbomachinery, structural mechanics and combustion.">
 
-<h1>Giacomo Parodi</h1>
+<style>
+:root {
+    --blue: #2458a6;
+    --text: #222;
+    --muted: #666;
+    --rule: #2458a6;
+    --paper: #fff;
+    --page-bg: #f2f2f2;
+}
 
-<p>My portfolio</p>
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    line-height: 1.35;
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255,255,255,.96);
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.site-nav a {
+    margin: 0 10px;
+    white-space: nowrap;
+}
+
+.page {
+    width: min(900px, calc(100% - 32px));
+    margin: 28px auto;
+    background: var(--paper);
+    padding: 70px 72px 58px;
+    box-shadow: 0 1px 7px rgba(0,0,0,.08);
+}
+
+.cover {
+    min-height: 820px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cover-rule {
+    width: 100%;
+    border-top: 2px solid var(--rule);
+    margin-bottom: 14px;
+}
+
+.cover-rule.bottom {
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+.cover h1 {
+    margin: 0;
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.subtitle {
+    margin-top: 5px;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--muted);
+}
+
+.cover-name {
+    margin-top: 105px;
+    font-size: 24px;
+}
+
+.cover-degree {
+    margin-top: 8px;
+    color: #555;
+}
+
+.contact {
+    margin-top: 66px;
+    font-size: 13px;
+}
+
+.contact span {
+    margin: 0 8px;
+    color: #777;
+}
+
+.cover-date {
+    margin-top: auto;
+    color: #777;
+    font-size: 12px;
+}
+
+.project {
+    page-break-before: always;
+}
+
+.project-title {
+    color: var(--blue);
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 400;
+    margin: 0 0 22px;
+    padding-bottom: 20px;
+    border-bottom: 1.5px solid var(--rule);
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 22px 0 12px;
+    color: #444;
+}
+
+h3 {
+    font-size: 15px;
+    margin: 20px 0 8px;
+}
+
+p { margin: 0 0 12px; }
+
+ul {
+    margin: 7px 0 17px 22px;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 7px;
+}
+
+strong { font-weight: 700; }
+
+.overview {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    column-gap: 12px;
+    row-gap: 2px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.overview .label { font-weight: 700; }
+
+.figure {
+    margin: 24px auto 28px;
+    text-align: center;
+}
+
+.figure img {
+    display: block;
+    max-width: 100%;
+    max-height: 520px;
+    margin: 0 auto 8px;
+    object-fit: contain;
+}
+
+.caption {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.25;
+    max-width: 90%;
+    margin: auto;
+}
+
+.two-figures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.two-figures .figure img { max-height: 360px; }
+
+.section-break {
+    height: 1px;
+    margin: 34px 0;
+    background: #ddd;
+}
+
+.back-top {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 12px;
+}
+
+@media (max-width: 700px) {
+    body { font-size: 14px; }
+
+    .site-nav {
+        overflow-x: auto;
+        white-space: nowrap;
+        text-align: left;
+    }
+
+    .page {
+        width: 100%;
+        margin: 0;
+        padding: 42px 25px;
+        box-shadow: none;
+    }
+
+    .cover {
+        min-height: 760px;
+    }
+
+    .cover-name { margin-top: 80px; }
+
+    .contact {
+        line-height: 1.8;
+    }
+
+    .overview {
+        grid-template-columns: 82px 1fr;
+    }
+
+    .two-figures {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    body { background: white; }
+
+    .site-nav { display: none; }
+
+    .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        box-shadow: none;
+        padding: 20mm 18mm;
+    }
+}
+</style>
+</head>
+
+<body id="top">
+
+<nav class="site-nav">
+    <a href="#top">Home</a>
+    <a href="#thesis">Master's Thesis</a>
+    <a href="#compressor">Axial Compressor</a>
+    <a href="#turbine">Axial Turbine</a>
+    <a href="#ctfd">CFD Solver</a>
+    <a href="#ddt">Hydrogen DDT</a>
+</nav>
+
+<!-- COVER -->
+<section class="page cover">
+    <div class="cover-rule"></div>
+    <h1>Portfolio</h1>
+    <div class="subtitle">Selected Engineering Projects</div>
+    <div class="cover-rule bottom"></div>
+
+    <div class="cover-name">Giacomo Parodi</div>
+    <div class="cover-degree">M.Sc. Aerospace</div>
+
+    <div class="contact">
+        <a href="mailto:parodi.giacomo2109@gmail.com">parodi.giacomo2109@gmail.com</a>
+        <span>|</span>
+        <a href="#" title="Replace with your LinkedIn URL">LinkedIn</a>
+        <span>|</span>
+        Genoa, Italy
+    </div>
+
+    <div class="cover-date">September 15, 2026</div>
+</section>
+
+<!-- MASTER'S THESIS -->
+<section class="page project" id="thesis">
+    <h1 class="project-title">Master’s Thesis – Structural Preliminary Design of Propeller Blades for Turboprop Engines</h1>
+
+    <h2>Overview</h2>
+    <div class="overview">
+        <div class="label">Title</div><div>Development and Verification of a Structural Conceptual Design Method for Propeller Blades</div>
+        <div class="label">Institution</div><div>Technical University of Munich (TUM)</div>
+        <div class="label">Company</div><div>MTU Aero Engines AG</div>
+        <div class="label">Department</div><div>Preliminary Design of Civil and Military Programs</div>
+        <div class="label">Completion</div><div>March 2026</div>
+    </div>
+
+    <h2>Objective</h2>
+    <p>Development and verification of a multidisciplinary preliminary design tool for propeller blades, intended for use in the conceptual design phase of propeller-driven aero engines. The tool enables the rapid assessment and optimization of propeller configurations and supports MTU’s preliminary design team in the context of both conventional turboprop engines and novel concepts such as Open Rotor and Propfan architectures.</p>
+
+    <h2>Methodology and Implementation</h2>
+    <ul>
+        <li>Coupling of <strong>aerodynamic blade geometry optimization</strong> (maximizing propeller efficiency) with an iterative structural sizing procedure aimed at <strong>weight minimization</strong> while ensuring structural integrity (Figure 1)</li>
+        <li><strong>Aerodynamic design</strong> using low-fidelity methods (BEMT - Blade Element Momentum Theory): computation of the external blade geometry and aerodynamic loads from mission-specific flight conditions and performance requirements</li>
+        <li><strong>Static structural analysis</strong> to determine a mass-optimal internal reinforcement structure for different blade configurations (solid, hollow, spar-reinforced)</li>
+        <li>Full implementation in <strong>Fortran</strong></li>
+        <li><strong>Validation of the tool’s predictive accuracy</strong> against a reference propeller configuration</li>
+    </ul>
+
+    <h2>Results</h2>
+    <ul>
+        <li>Weight prediction accuracy within ±5% against the reference configuration, confirming the validity of the implemented approach</li>
+        <li>Structural sizing dimensions consistent with reference data within 33% deviation across all blade components (Figure 2)</li>
+    </ul>
+
+    <div class="figure">
+        <img src="assets/fig1_methodology.png" alt="Conceptual design methodology">
+        <div class="caption">Figure 1: Overview of the conceptual design methodology: aerodynamic design followed by the iterative structural sizing procedure of the blade.</div>
+    </div>
+
+    <h2>Methods and Tools</h2>
+    <ul>
+        <li><strong>Programming:</strong> Fortran (numerical solver), Python (post-processing)</li>
+        <li><strong>Structural Mechanics:</strong> FEM simulations in ABAQUS and CalculiX & analytical calculations (1D beam theories: Euler-Bernoulli & Timoshenko)</li>
+        <li><strong>Aerodynamics:</strong> Blade Element Theory (BET) - propeller design for maximum efficiency</li>
+    </ul>
+
+    <h2>Skills Acquired</h2>
+    <ul>
+        <li><strong>Multidisciplinary design methodology for propeller blades:</strong> Complete development of a sizing tool - from concept and implementation to validation - requiring coordination across aerodynamics, structural and preliminary design disciplines</li>
+        <li><strong>Aerodynamic and structural coupling in open-rotor architectures:</strong> Direct experience in the multidisciplinary coupling of low-fidelity aerodynamics (Blade Element Theory) with structural FEM sizing, in the specific context of turboprop, Open Rotor, and Propfan blade design</li>
+        <li><strong>Numerical implementation in Fortran:</strong> Development of an automated design and optimization loop integrating external FEM solvers</li>
+    </ul>
+
+    <div class="figure">
+        <img src="assets/fig2_thickness.png" alt="Optimized skin and web thickness distributions">
+        <div class="caption">Figure 2: Optimized skin and web thickness distributions along the normalized blade radius r/R for Nw = 1, 2, 3 compared to the reference case.</div>
+    </div>
+</section>
+
+<!-- COMPRESSOR -->
+<section class="page project" id="compressor">
+    <h1 class="project-title">Laboratory Course – CFD Design and Cavity Effects in an Axial Compressor</h1>
+
+    <h2>Overview</h2>
+    <div class="overview">
+        <div class="label">Title</div><div>Cavity Effects in a Shrouded Stator</div>
+        <div class="label">Institution</div><div>Technical University of Munich (TUM)</div>
+        <div class="label">Course</div><div>CFD Design of Turbomachinery</div>
+        <div class="label">Completion</div><div>March 2025</div>
+    </div>
+
+    <h2>Objective</h2>
+    <p>Numerical design of an axial compressor stage for aero engine applications and investigation of the aerodynamic effects of the hub cavity of a shrouded stator on stage performance.</p>
+
+    <h2>Methodology and Implementation</h2>
+    <ul>
+        <li>Complete stage design: 1D meanline design, 2D cascade design and 3D CFD simulation (mesh generation with ICEM CFD, flow solution with ANSYS CFX) up to the determination of the operating line of the reference stage without cavity (ideal stator)</li>
+        <li>Modelling of the stator hub cavity through artificial inlet and outlet boundary conditions at the stator hub (Figure 3) – 0.7 % of the total mass flow rate is injected as leakage flow from the cavity and recirculated back into the main channel</li>
+        <li>Comparison of operating lines (pressure ratio, polytropic efficiency) between the ideal and cavity configurations at three operating points: design point, choke and surge</li>
+        <li>Quantitative loss analysis based on radial distributions of loss indicating quantities; qualitative assessment via contour plots</li>
+    </ul>
+
+    <h2>Results</h2>
+    <ul>
+        <li>The cavity generates a large vortex at the hub, which expands along the blade span and reaches its maximum near the trailing edge (Figure 4) - a consequence of the mixing between leakage and main channel flows</li>
+        <li>Significant performance penalties at all operating points: reduction in total pressure ratio and polytropic efficiency (Figure 6); the effect intensifies towards surge</li>
+        <li>Losses are concentrated in the hub-side region (&lt; 30 % of blade span), where the stator loss coefficient is more than doubled compared to the reference case (Figure 5)</li>
+    </ul>
+
+    <div class="figure">
+        <img src="assets/fig3_mesh.png" alt="Structured computational mesh of the shrouded stator stage">
+        <div class="caption">Figure 3: Structured computational mesh of the shrouded stator stage (ANSYS ICEM CFD).</div>
+    </div>
+
+    <div class="figure">
+        <img src="assets/fig4_streamlines.png" alt="Streamlines comparison between ideal stator and cavity configuration">
+        <div class="caption">Figure 4: Streamlines at hub, casing and blade surface – comparison between configurations.</div>
+    </div>
+
+    <div class="figure">
+        <img src="assets/fig5_loss.png" alt="Radial distribution of stator loss coefficient">
+        <div class="caption">Figure 5: Radial distribution of the stator loss coefficient ωstator over the normalized blade height at the design operating point (DOP).</div>
+    </div>
+
+    <div class="figure">
+        <img src="assets/fig6_operatingline.png" alt="Stage operating line and polytropic efficiency">
+        <div class="caption">Figure 6: Comparison of global stage performance between ideal stator and cavity configuration.</div>
+    </div>
+
+    <h2>Methods and Tools</h2>
+    <ul>
+        <li><strong>Mesh generation:</strong> ANSYS ICEM CFD</li>
+        <li><strong>CFD solver & post-processing:</strong> ANSYS CFX</li>
+        <li><strong>Turbulence model:</strong> kε model (2-equation model)</li>
+    </ul>
+
+    <h2>Skills Acquired</h2>
+    <ul>
+        <li><strong>Axial compressors aerodynamic design:</strong> End-to-end understanding of the compressor stage design process - 1D meanline sizing, 2D cascade & 3D stage simulation</li>
+        <li><strong>Structured mesh generation for turbomachinery:</strong> Experience in generating multi-block structured meshes for complex stator passage geometries</li>
+        <li><strong>Internal flow aerodynamics in axial compressors:</strong> Comprehensive characterization of leakage flows and secondary flow structures via RANS CFD modelling - combining qualitative flow visualization (contour plots, streamlines) with quantitative aerodynamic parameter distributions to assess the impact on stage performance</li>
+    </ul>
+</section>
+
+<!-- TURBINE -->
+<section class="page project" id="turbine">
+    <h1 class="project-title">Bachelor’s Thesis – CFD Analysis of Tip Clearance Effects in an Axial Turbine Stage</h1>
+
+    <h2>Overview</h2>
+    <div class="overview">
+        <div class="label">Title</div><div>CFD Analysis of Tip Clearance Variation Effects in an Axial Turbine Model</div>
+        <div class="label">Institution</div><div>University of Genoa</div>
+        <div class="label">Completion</div><div>July 2023</div>
+    </div>
+
+    <h2>Objective</h2>
+    <p>Development of a validated CFD model of the experimental axial turbine at RWTH Aachen University and investigation of the effects of rotor tip clearance on leakage losses and the associated vortical structures within the rotor passage.</p>
+
+    <h2>Methodology and Implementation</h2>
+    <ul>
+        <li>Modelling of four different rotor tip clearances and generation of structured block meshes (Figure 7) with adapted wall spacing (y+ = 1) for accurate boundary layer resolution</li>
+        <li>RANS simulations with the Spalart–Allmaras turbulence model - selected for its robustness and acceptable computational cost for complex turbomachinery flows</li>
+        <li>Qualitative analysis of flow structures within the rotor passage using contour plots of relative total pressure, entropy, and relative Mach number on axial cross-sections (z/b = 0.0 … 1.0)</li>
+        <li>Quantitative loss assessment via circumferentially averaged distributions of relative total pressure over the blade span and mass-flow-weighted radial averaging</li>
+    </ul>
+
+    <h2>Results</h2>
+    <ul>
+        <li>Tip leakage vortices develop within the rotor passage, growing in intensity with increasing axial distance; the vortical structures are markedly stronger at larger clearances (Figure 8), driven by the higher leakage mass flow rate through the gap</li>
+        <li>The loss analysis (Figure 9) reveals a clear increase in total pressure losses with increasing tip clearance; the affected region expands from the blade tip towards the hub</li>
+    </ul>
+
+    <div class="figure">
+        <img src="assets/fig7_mesh.png" alt="Structured 3D computational mesh of the Aachen turbine">
+        <div class="caption">Figure 7: Structured 3D computational mesh of the Aachen turbine (NUMECA AutoGrid5™).</div>
+    </div>
+
+    <div class="figure">
+        <img src="assets/fig8_mach.png" alt="Relative Mach number distribution for four tip clearances">
+        <div class="caption">Figure 8: Relative Mach number distribution on axial cross-sections of the rotor passage for four tip clearances.</div>
+    </div>
+
+    <div class="figure">
+        <img src="assets/fig9_pressureloss.png" alt="Relative total pressure distribution">
+        <div class="caption">Figure 9: Circumferentially averaged relative total pressure distribution over the normalized blade height at the rotor trailing edge.</div>
+    </div>
+
+    <h2>Methods and Tools</h2>
+    <ul>
+        <li><strong>Mesh generation, CFD solver & post-processing:</strong> NUMECA AutoGrid5™, FINE™/Turbo and CFView™</li>
+        <li><strong>Turbulence model:</strong> Spalart-Allmaras (1-equation model)</li>
+    </ul>
+
+    <h2>Skills Acquired</h2>
+    <ul>
+        <li><strong>Flow mechanics in axial turbine stages:</strong> In-depth understanding of aerodynamic loss mechanisms in turbomachinery - in particular secondary flow structures and their interaction with the main flow, along with their numerical modelling via RANS methods</li>
+        <li><strong>CFD mesh generation for turbomachinery:</strong> Hands-on experience in generating structured block meshes for complex turbomachinery geometries - including control of wall spacing (y+) and mesh quality parameters (orthogonality, skewness, expansion ratio)</li>
+    </ul>
+</section>
+
+<!-- CTFD -->
+<section class="page project" id="ctfd">
+    <h1 class="project-title">Laboratory Course – 2D Numerical Simulation of Airflow Around Mountain-Shaped Profiles</h1>
+
+    <h2>Overview</h2>
+    <div class="overview">
+        <div class="label">Title</div><div>2D Numerical Simulation of Air Flow Around Mountain-Shaped Profiles</div>
+        <div class="label">Institution</div><div>Technical University of Munich (TUM)</div>
+        <div class="label">Course</div><div>Computational Thermo-Fluid Dynamics (CTFD)</div>
+        <div class="label">Completion</div><div>February 2025</div>
+    </div>
+
+    <h2>Objective</h2>
+    <p>Implementation of an unsteady 2D numerical solver for the incompressible Navier-Stokes equations, validated against an analytical benchmark and applied to the study of atmospheric flow over mountain-shaped obstacles. The aim is to assess whether a low-cost finite-difference (FD) approach is sufficient to capture the key fluid-dynamic phenomena (flow acceleration, boundary-layer separation, and turbulent kinetic energy growth) as a function of obstacle geometry and Reynolds number.</p>
+
+    <h2>Methodology and Implementation</h2>
+    <ul>
+        <li><strong>Mathematical model:</strong> Incompressible, isothermal Navier-Stokes equations in 2D</li>
+        <li><strong>Numerical solver (Python):</strong> Structured Cartesian mesh; second-order centred finite differences for spatial discretisation; explicit Runge-Kutta 4 scheme for time integration with adaptive time-stepping based on CFL and diffusion stability constraints; pressure-velocity coupling enforced via iterative resolution of the Pressure Poisson Equation (PPE)</li>
+        <li><strong>Validation - plane Poiseuille flow:</strong> Numerical simulation of pressure-driven laminar channel flow and comparison of the computed velocity profile against the parabolic analytical solution</li>
+        <li><strong>Application to mountain-shaped geometries:</strong> Three obstacle profiles of increasing complexity (rectangular, smooth Gaussian, and irregular multi-peak) simulated at Re ∈ {10, 10³, 5·10³, 10⁴}</li>
+    </ul>
+
+    <h2>Results</h2>
+    <ul>
+        <li><strong>Reynolds number dependency:</strong> Velocity magnitude contour plots (Figure 10) demonstrate the progressive transition from fully attached flow to boundary-layer separation phenomena as the Reynolds number increases</li>
+        <li><strong>Geometry influence:</strong> Obstacle shape significantly affects flow separation patterns and vortex structures, as shown by the velocity magnitude contour plots for the three geometries (Figure 11) and the TKE evolution with Reynolds number (Figure 12)</li>
+    </ul>
+
+    <div class="figure">
+        <img src="assets/fig10_velocity.png" alt="Velocity magnitude contour plots">
+        <div class="caption">Figure 10: Velocity magnitude contour plots for the irregular mountain profile at low and high Reynolds number.</div>
+    </div>
+
+    <div class="figure">
+        <img src="assets/fig11_geometries.png" alt="Velocity magnitude contour plots for three obstacle geometries">
+        <div class="caption">Figure 11: Velocity magnitude contour plots for the three obstacle geometries at Re = 10⁴.</div>
+    </div>
+
+    <div class="figure">
+        <img src="assets/fig12_tke.png" alt="Maximum turbulent kinetic energy versus Reynolds number">
+        <div class="caption">Figure 12: Maximum Turbulent Kinetic Energy as a function of Reynolds number for the three obstacle geometries.</div>
+    </div>
+
+    <h2>Methods and Tools</h2>
+    <ul>
+        <li><strong>Programming:</strong> Python (solver implementation, mesh generation, post-processing, animations)</li>
+        <li><strong>Numerical methods:</strong> Finite Difference Method (FDM), Runge-Kutta 4, iterative Pressure Poisson solver, adaptive CFL/diffusion time-stepping</li>
+    </ul>
+
+    <h2>Skills Acquired</h2>
+    <ul>
+        <li>Implementation from scratch of an unsteady incompressible Navier-Stokes solver in Python, including pressure-velocity coupling and adaptive time integration</li>
+        <li>Validation methodology for CFD solvers against analytical benchmark solutions (plane Poiseuille flow)</li>
+        <li>In-depth knowledge of numerical methods for computational fluid dynamics: spatial discretisation & time integration schemes, pressure-velocity coupling strategies and stability criteria</li>
+        <li>Analysis of Reynolds-number-dependent flow phenomena</li>
+    </ul>
+</section>
+
+<!-- DDT -->
+<section class="page project" id="ddt">
+    <h1 class="project-title">Semester Project – Numerical Analysis of Detonation Processes in Pipes with Hydrogen-Air Mixtures</h1>
+
+    <h2>Overview</h2>
+    <div class="overview">
+        <div class="label">Title</div><div>Simulative Analysis of Flame Propagation and Explosion Processes in Pipes with Hydrogen-Air Mixtures</div>
+        <div class="label">Institution</div><div>Technical University of Munich (TUM)</div>
+        <div class="label">Company</div><div>Everllence (MAN Energy Solutions)</div>
+        <div class="label">Completion</div><div>May 2025</div>
+    </div>
+
+    <h2>Objective</h2>
+    <p>Development of a combined analytical-numerical method for the verification of detonation and Deflagration-to-Detonation Transition (DDT) conditions in pipelines containing hydrogen-air mixtures. The focus is on the influence of thermochemical parameters on flame propagation and explosion dynamics - at low computational cost (without 3D CFD).</p>
+
+    <h2>Methodology and Implementation</h2>
+    <ul>
+        <li><strong>Definition of gas mixtures:</strong> Modelling of 20 mixtures composed of hydrogen, air and combustion products (H2O, N2, O2) at four temperatures (757 K–1023 K) and four excess air ratios (λ = 1.0 … 3.88) using Cantera (Python)</li>
+        <li><strong>Verification of the Chapman-Jouguet condition:</strong> Computation of the laminar flame speed via 1D flame propagation simulation and comparison with the CJ velocity to assess whether direct detonation initiation after ignition is possible</li>
+        <li><strong>DDT analysis:</strong> Analytical estimation of the minimum pipe length required for a complete DDT process (Figure 13)</li>
+        <li><strong>Verification of detonation self-sustainment:</strong> 0D reactor simulation in Cantera using the post-shock state to evaluate ignition delay phenomena and assess the stability of the developed detonation wave (post-shock state computed via the Shock and Detonation Toolbox in Python)</li>
+    </ul>
+
+    <h2>Results</h2>
+    <ul>
+        <li><strong>Chapman-Jouguet conditions:</strong> The analysed thermochemical conditions do not satisfy the CJ criterion - direct detonation initiation upon ignition is not expected without additional energy input</li>
+        <li><strong>0D reactor simulation:</strong> Species time histories (Figure 14) confirm successful ignition demonstrating the physical consistency of the model. However, the computed ignition delay times, being of the same order of magnitude as the chemical reaction time, indicate that a detonation wave formed via DDT would be unable to self-sustain and would decay under the investigated conditions</li>
+    </ul>
+
+    <div class="figure">
+        <img src="assets/fig13_ddt.png" alt="DDT in a closed-end pipe">
+        <div class="caption">Figure 13: DDT in a closed-end pipe: pre-compression waves progressively accumulate and eventually collapse into a shock wave.</div>
+    </div>
+
+    <div class="figure">
+        <img src="assets/fig14_species.png" alt="H2 and OH mole fractions versus time">
+        <div class="caption">Figure 14: Time evolution of the mole fractions of H2 and OH in the 0D reactor simulation.</div>
+    </div>
+
+    <h2>Methods and Tools</h2>
+    <ul>
+        <li><strong>Programming:</strong> Python (Cantera, Shock and Detonation Toolbox), MATLAB (post-processing)</li>
+        <li><strong>Combustion modelling:</strong> 1D flame propagation simulation & 0D reactor simulation (Cantera)</li>
+    </ul>
+
+    <h2>Skills Acquired</h2>
+    <ul>
+        <li>Modelling and analysis of flame propagation and detonation processes in reactive gas mixtures</li>
+        <li>Knowledge of classical detonation theories (CJ, ZND) and their application to safety-related problems</li>
+        <li>Experience with chemical kinetics libraries (Cantera, SDT) in Python</li>
+    </ul>
+
+    <div class="back-top"><a href="#top">↑ Back to top</a></div>
+</section>
 
 </body>
 </html>
