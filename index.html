@@ -180,6 +180,14 @@ strong { font-weight: 700; }
     max-width: 100%;
     margin: 0 auto 8px; 
 }
+
+.figure img.large {
+    width: 90%;
+}
+
+.figure img.small {
+    width: 60%;
+}
     
 .caption {
     font-size: 11px;
@@ -382,7 +390,7 @@ strong { font-weight: 700; }
     </ul>
 
     <div class="figure">
-        <img src="fig3_mesh.png" alt="Structured computational mesh of the shrouded stator stage">
+        <img class="small" src="fig3_mesh.png" alt="Structured computational mesh of the shrouded stator stage">
         <div class="caption">Figure 3: Structured computational mesh of the shrouded stator stage (ANSYS ICEM CFD).  The cavity is modelled through additional boundary conditions at the stator hub
         region.</div>
     </div>
@@ -394,7 +402,7 @@ strong { font-weight: 700; }
     </div>
 
     <div class="figure">
-        <img src="fig5_loss.png" alt="Radial distribution of stator loss coefficient">
+        <img class="small" src="fig5_loss.png" alt="Radial distribution of stator loss coefficient">
         <div class="caption">Figure 5: Radial distribution of the stator loss coefficient ωstator over the normalized blade height at the design operating point (DOP). for the cavity and ideal stator configurations.</div>
     </div>
 
@@ -448,7 +456,7 @@ strong { font-weight: 700; }
     </ul>
 
     <div class="figure">
-        <img src="fig7_mesh.png" alt="Structured 3D computational mesh of the Aachen turbine">
+        <img class="small" src="fig7_mesh.png" alt="Structured 3D computational mesh of the Aachen turbine">
         <div class="caption">Figure 7: Structured 3D computational mesh of the Aachen turbine (NUMECA AutoGrid5™).</div>
     </div>
 
@@ -459,7 +467,7 @@ strong { font-weight: 700; }
     </div>
 
     <div class="figure">
-        <img src="fig9_pressureloss.png" alt="Relative total pressure distribution">
+        <img class="small" src="fig9_pressureloss.png" alt="Relative total pressure distribution">
         <div class="caption">Figure 9: Circumferentially averaged relative total pressure distribution over the normalized blade height at the rotor trailing edge. for the four investigated tip
         clearances. The curves demonstrate the increasing loss intensity and the widening of the
         loss region with growing tip clearance.</div>
@@ -520,7 +528,7 @@ strong { font-weight: 700; }
     </div>
 
     <div class="figure">
-        <img src="fig12_tke.png" alt="Maximum turbulent kinetic energy versus Reynolds number">
+        <img class="small" src="fig12_tke.png" alt="Maximum turbulent kinetic energy versus Reynolds number">
         <div class="caption">Figure 12: Maximum Turbulent Kinetic Energy as a function of Reynolds number for the three obstacle geometries. The TKE increases monotonically with Re for all cases; the
         irregular multi-peak profile consistently yields the highest turbulent intensity.</div>
     </div>
@@ -570,7 +578,7 @@ strong { font-weight: 700; }
     </ul>
 
     <div class="figure">
-        <img src="fig13_ddt.png" alt="DDT in a closed-end pipe">
+        <img class="small" src="fig13_ddt.png" alt="DDT in a closed-end pipe">
         <div class="caption">Figure 13: DDT in a closed-end pipe:  The closed end imposes a zero-velocity boundary
         condition at the wall, generating pre-compression waves that counteract the wall-normal
         velocity induced by the propagating deflagration. These waves progressively accumulate
@@ -580,7 +588,7 @@ strong { font-weight: 700; }
     </div>
 
     <div class="figure">
-        <img src="fig14_species.png" alt="H2 and OH mole fractions versus time">
+        <img class="small" src="fig14_species.png" alt="H2 and OH mole fractions versus time">
         <div class="caption">Figure 14: Time evolution of the mole fractions of H2 and OH in the 0D reactor simulation (λ = 1, T1 = 1023 K).  The simultaneous rise of OH and drop of H2 marks the ignition
         point, whose temporal coordinate, known as the Ignition Delay Time (IDT), is indicated
         by the vertical dashed black line. The reaction time is defined as the time elapsed between
